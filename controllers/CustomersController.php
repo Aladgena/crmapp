@@ -21,11 +21,9 @@ class CustomersController extends Controller
     {
         $customer = new CustomerRecord;
         $phone = new PhoneRecord;
-echo '11111<pre>';
-var_dump($customer);
+
         if ($this->load($customer, $phone, $_POST))
         {
-			print_r($customer);
             $this->store($this->makeCustomer($customer, $phone));
             return $this->redirect('/crmapp/web/customers/');
         }

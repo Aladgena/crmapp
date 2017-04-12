@@ -1,6 +1,12 @@
 <?php
 return [
     'id' => 'crmapp',
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+            'allowedIPs' => ['192.168.233.*']
+        ],
+    ],
     'basePath' => realpath(__DIR__ . '/../'),
     'components' => [
         'request' => [
@@ -12,4 +18,5 @@ return [
             'showScriptName' => false,
         ],
     ],
+    'extensions' => require(__DIR__ . '/../vendor/yiisoft/extensions.php')
 ];
